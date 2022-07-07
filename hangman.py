@@ -13,12 +13,11 @@ for i in l1:
     print(i, end=" ")
 word_length = len(chosen_word)
 
-end = False
-while not end:
+while True:
     guess = input("\n\nGuess a letter: ").lower()
 
     if guess not in chosen_word:
-        print("Sorry!! Wrong Answer, You lose a life")
+        print(f"Sorry!! Wrong Answer, You have {lives} lives left.")
         print(hangmanArt.stages[lives - 1])
         lives -= 1
     if lives == 0:
@@ -31,6 +30,5 @@ while not end:
     for i in l1:
         print(i, end=" ")
     if "_" not in l1:
-        end_of_game = True
         print("\nYou win!!.")
         break
